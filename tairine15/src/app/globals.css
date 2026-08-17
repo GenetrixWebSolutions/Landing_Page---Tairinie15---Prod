@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --color-navy: #0a1230;
+  --color-royal: #2b4bb0;
+  --color-silver: #c7d0e0;
+  --color-white: #ffffff;
+  --color-gold-accent: #c9a24b;
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+  --font-script: var(--font-script);
+}
+
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: clip;
+}
+
+main > section {
+  scroll-margin-top: calc(env(safe-area-inset-top) + 6rem);
+}
+
+.font-serif { font-family: var(--font-serif), Georgia, serif; }
+.font-script { font-family: var(--font-script), cursive; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+.animate-twinkle { animation: twinkle 4s ease-in-out infinite; }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+
+::selection { background: var(--color-royal); color: white; }
+
+@media (pointer: fine) {
+  .custom-cursor-active { cursor: none; }
+}

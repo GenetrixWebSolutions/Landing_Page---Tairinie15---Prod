@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum RsvpStatus {
+  PENDING
+  CONFIRMED
+  DECLINED
+}
+
+enum AgeCategory {
+  ADULT
+  CHILD
+}
+
+model GuestGroup {
+  id              String   @id @default(cuid())
+  name            String
+  maximumGuests   Int      @default(1)
+  allowsCompanion Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  guests  Guest[]
+  members GroupMember[]
+}
+
+model Guest {
+  id             String   @id @default(cuid())
+  name           String
+  normalizedName String
+  invitationCode String   @unique
+  phone          String?
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  groupId String?
+  group   GuestGroup? @relation(fields: [groupId], references: [id])
+
+  rsvp RSVP?
+
+  @@index([normalizedName])
+}
+
+model GroupMember {
+  id          String      @id @default(cuid())
+  groupId     String
+  name        String
+  confirmed   Boolean     @default(false)
+  ageCategory AgeCategory @default(ADULT)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  group GuestGroup @relation(fields: [groupId], references: [id])
+}
+
+model RSVP {
+  id                  String     @id @default(cuid())
+  guestId             String     @unique
+  guest               Guest      @relation(fields: [guestId], references: [id])
+  status              RsvpStatus @default(PENDING)
+  confirmedCount      Int        @default(0)
+  phone               String?
+  dietaryRestrictions String?
+  message             String?
+  notes               String?
+  respondedAt         DateTime?
+  updatedAt           DateTime   @updatedAt
+}

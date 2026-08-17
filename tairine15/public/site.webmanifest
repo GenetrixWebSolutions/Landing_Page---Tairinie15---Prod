@@ -1,0 +1,10 @@
+{
+  "name": "15 Anos de Tairine",
+  "short_name": "Tairine 15",
+  "description": "Convite digital para os 15 anos de Tairine",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1230",
+  "theme_color": "#0a1230",
+  "icons": []
+}

@@ -1,0 +1,23 @@
+"use client";
+import { motion } from "framer-motion";
+import { FAVORITE_COLORS_CONTENT } from "@/constants/content";
+import { SectionHeading } from "@/components/ui/Card";
+
+export function FavoriteColorsSection() {
+  return (
+    <section className="px-4 py-16 sm:px-6 sm:py-20 md:py-24">
+      <div className="mx-auto max-w-4xl">
+        <SectionHeading title={FAVORITE_COLORS_CONTENT.title} />
+        <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
+          {FAVORITE_COLORS_CONTENT.colors.map((color, i) => (
+            <motion.div key={color.name} initial={{ opacity: 0, scale: 0.94 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: false, amount: 0.35, margin: "-10% 0px -10% 0px" }} transition={{ duration: 0.6, delay: i * 0.12 }} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center sm:p-6">
+              <div className="mx-auto mb-4 h-14 w-14 rounded-full shadow-[0_0_25px_rgba(255,255,255,0.15)]" style={{ backgroundColor: color.hex }} aria-hidden="true" />
+              <p className="font-serif text-lg text-white">{color.name}</p>
+              <p className="mt-1 text-sm text-white/60">{color.meaning}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
