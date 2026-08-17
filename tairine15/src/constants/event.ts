@@ -12,7 +12,7 @@ export const EVENT = {
   debutanteFirstName: "Tairine",
   debutanteFullName: "Tairine Maria Pinto Rodrigues",
   birthDate: "2011-09-14",
-  partyDateISO: process.env.NEXT_PUBLIC_EVENT_DATE ?? "2026-09-18T08:30:00-03:00",
+  partyDateISO: process.env.NEXT_PUBLIC_EVENT_DATE ?? "2026-09-18T20:30:00-03:00",
   partyEndTime: "",
   venueName: "Salão Baby Festas",
   address: "",

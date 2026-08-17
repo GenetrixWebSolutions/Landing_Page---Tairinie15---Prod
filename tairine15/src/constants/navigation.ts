@@ -19,6 +19,15 @@ export const SECTION_LINKS = {
   location: `#${SECTION_IDS.location}`,
 } as const;
 
+export function scrollToSection(href: string) {
+  const target = document.querySelector<HTMLElement>(href);
+  if (!target) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  target.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
+  window.history.pushState(null, "", href);
+}
+
 export const NAVIGATION_CONTENT = {
   brandSuffix: "15",
   desktopAriaLabel: "Navegação principal",

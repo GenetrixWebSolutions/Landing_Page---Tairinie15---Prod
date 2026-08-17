@@ -4,7 +4,6 @@ import { AnimatePresence } from "framer-motion";
 
 import { LoadingScreen } from "@/components/invitation/LoadingScreen";
 import { InvitationGate } from "@/components/invitation/InvitationGate";
-import { AudioToggle } from "@/components/invitation/AudioToggle";
 import { StarfieldBackground } from "@/components/animations/StarfieldBackground";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -67,7 +66,6 @@ export default function Home() {
             <ClosingSection />
           </main>
           <Footer />
-          <AudioToggle />
         </>
       )}
     </>

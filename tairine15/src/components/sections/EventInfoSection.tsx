@@ -1,11 +1,10 @@
 "use client";
 import { EVENT_INFO_CONTENT } from "@/constants/content";
 import { EVENT } from "@/constants/event";
-import { SECTION_IDS, SECTION_LINKS } from "@/constants/navigation";
+import { SECTION_IDS, SECTION_LINKS, scrollToSection } from "@/constants/navigation";
 import { SectionHeading, Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/animations/Reveal";
-import { downloadIcsFile } from "@/utils/generateIcs";
 
 export function EventInfoSection() {
   const date = new Date(EVENT.partyDateISO);
@@ -36,8 +35,7 @@ export function EventInfoSection() {
         </Reveal>
         <Reveal delay={0.15} className="mx-auto mt-8 grid w-full max-w-sm gap-3 sm:flex sm:max-w-none sm:flex-wrap sm:justify-center sm:gap-4">
           <Button variant="secondary" className="w-full sm:w-auto" onClick={() => window.open(EVENT.maps.googleMapsUrl, "_blank")}>{EVENT_INFO_CONTENT.buttons.googleMaps}</Button>
-          <Button variant="secondary" className="w-full sm:w-auto" onClick={downloadIcsFile}>{EVENT_INFO_CONTENT.buttons.calendar}</Button>
-          <Button className="w-full sm:w-auto" onClick={() => (window.location.hash = SECTION_LINKS.rsvp)}>{EVENT_INFO_CONTENT.buttons.rsvp}</Button>
+          <Button className="w-full sm:w-auto" onClick={() => scrollToSection(SECTION_LINKS.rsvp)}>{EVENT_INFO_CONTENT.buttons.rsvp}</Button>
         </Reveal>
       </div>
     </section>

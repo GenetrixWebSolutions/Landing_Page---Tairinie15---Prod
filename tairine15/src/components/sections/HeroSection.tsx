@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { HERO_CONTENT, MEDIA_CONTENT } from "@/constants/content";
 import { EVENT } from "@/constants/event";
-import { SECTION_IDS, SECTION_LINKS } from "@/constants/navigation";
+import { SECTION_IDS, SECTION_LINKS, scrollToSection } from "@/constants/navigation";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { Button } from "@/components/ui/Button";
 
@@ -44,8 +44,8 @@ export function HeroSection() {
             <span>{EVENT.venueName} — {EVENT.cityState}</span>
           </div>
           <div className="mx-auto mt-7 grid w-full max-w-xs gap-3 sm:flex sm:max-w-none sm:flex-wrap sm:justify-center sm:gap-4 md:mx-0 md:justify-start">
-            <Button size="lg" className="w-full sm:w-auto" onClick={() => (window.location.hash = SECTION_LINKS.rsvp)}>{HERO_CONTENT.primaryButtonLabel}</Button>
-            <Button size="lg" variant="secondary" className="w-full sm:w-auto" onClick={() => (window.location.hash = SECTION_LINKS.about)}>{HERO_CONTENT.secondaryButtonLabel}</Button>
+            <Button size="lg" className="w-full sm:w-auto" onClick={() => scrollToSection(SECTION_LINKS.rsvp)}>{HERO_CONTENT.primaryButtonLabel}</Button>
+            <Button size="lg" variant="secondary" className="w-full sm:w-auto" onClick={() => scrollToSection(SECTION_LINKS.about)}>{HERO_CONTENT.secondaryButtonLabel}</Button>
           </div>
         </motion.div>
         <motion.div

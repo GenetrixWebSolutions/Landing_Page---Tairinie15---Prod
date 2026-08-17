@@ -107,7 +107,7 @@ Os principais dados editáveis ficam em `src/constants/`.
 | Mensagem inicial do WhatsApp | `src/constants/event.ts` em `EVENT.whatsapp.defaultMessage` |
 
 Valores atuais do evento:
-- Data e horário: `2026-09-18T08:30:00-03:00`
+- Data e horário: `2026-09-18T20:30:00-03:00`
 - Local: `Salão Baby Festas`
 - Cidade: `Conceição dos Ouros - MG`
 - Busca do mapa: `Salão Baby Festas, Conceição dos Ouros, MG`

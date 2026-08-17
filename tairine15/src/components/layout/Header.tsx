@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { FOOTER_CONTENT, HERO_CONTENT } from "@/constants/content";
-import { NAVIGATION_CONTENT, NAV_ITEMS, SECTION_LINKS } from "@/constants/navigation";
+import { NAVIGATION_CONTENT, NAV_ITEMS, SECTION_LINKS, scrollToSection } from "@/constants/navigation";
 import { Button } from "@/components/ui/Button";
 
 export function Header() {
@@ -32,7 +32,7 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <Button size="md" onClick={() => (window.location.hash = SECTION_LINKS.rsvp)}>{HERO_CONTENT.primaryButtonLabel}</Button>
+          <Button size="md" onClick={() => scrollToSection(SECTION_LINKS.rsvp)}>{HERO_CONTENT.primaryButtonLabel}</Button>
         </div>
         <button type="button" className="flex h-11 w-11 items-center justify-center rounded-full text-white transition hover:bg-white/10 lg:hidden" aria-expanded={isMenuOpen} aria-label={NAVIGATION_CONTENT.menuToggleLabel} onClick={() => setIsMenuOpen((v) => !v)}>
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
