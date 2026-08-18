@@ -46,7 +46,7 @@ export default function Home() {
       {stage === "invitation" && (
         <>
           <Header />
-          <main>
+          <main className="invitation-flow">
             <HeroSection />
             <CountdownSection />
             <AboutSection />

@@ -29,7 +29,7 @@ export function scrollToSection(href: string) {
 }
 
 export const NAVIGATION_CONTENT = {
-  brandSuffix: "15",
+  brandSuffix: "15 anos",
   desktopAriaLabel: "Navegação principal",
   mobileAriaLabel: "Navegação móvel",
   menuToggleLabel: "Abrir menu",

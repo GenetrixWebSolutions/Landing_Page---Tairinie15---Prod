@@ -43,17 +43,13 @@ export function HeroSection() {
             <span>{formattedDate} às {formattedTime}</span>
             <span>{EVENT.venueName} — {EVENT.cityState}</span>
           </div>
-          <div className="mx-auto mt-7 grid w-full max-w-xs gap-3 sm:flex sm:max-w-none sm:flex-wrap sm:justify-center sm:gap-4 md:mx-0 md:justify-start">
-            <Button size="lg" className="w-full sm:w-auto" onClick={() => scrollToSection(SECTION_LINKS.rsvp)}>{HERO_CONTENT.primaryButtonLabel}</Button>
-            <Button size="lg" variant="secondary" className="w-full sm:w-auto" onClick={() => scrollToSection(SECTION_LINKS.about)}>{HERO_CONTENT.secondaryButtonLabel}</Button>
-          </div>
         </motion.div>
         <motion.div
           initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.92 }}
           whileInView={prefersReducedMotion ? undefined : { opacity: 1, scale: 1 }}
           viewport={{ once: false, amount: 0.45, margin: "-15% 0px -15% 0px" }}
           transition={{ duration: 0.9, delay: 0.22 }}
-          className="relative mx-auto h-[18.5rem] w-full max-w-[15.5rem] min-[360px]:h-[20.5rem] min-[360px]:max-w-[16.5rem] min-[390px]:h-[22.5rem] min-[390px]:max-w-[18rem] sm:h-[32rem] sm:max-w-sm md:h-[34rem]"
+          className="relative mx-auto h-[18.5rem] w-full max-w-[15.5rem] min-[360px]:h-[20.5rem] min-[360px]:max-w-[16.5rem] min-[390px]:h-[22.5rem] min-[390px]:max-w-[18rem] sm:h-[32rem] sm:max-w-sm md:col-start-2 md:row-span-2 md:row-start-1 md:h-[34rem]"
         >
           {MEDIA_CONTENT.images.heroCards.map((photo, index) => {
             const isActive = index === activePhotoIndex;
@@ -88,6 +84,16 @@ export function HeroSection() {
               </motion.button>
             );
           })}
+        </motion.div>
+        <motion.div
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
+          whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 0.75, delay: 0.28 }}
+          className="mx-auto grid w-full max-w-xs gap-3 sm:flex sm:max-w-none sm:flex-wrap sm:justify-center sm:gap-4 md:col-start-1 md:row-start-2 md:mx-0 md:justify-start md:self-start"
+        >
+          <Button size="lg" className="w-full sm:w-auto" onClick={() => scrollToSection(SECTION_LINKS.rsvp)}>{HERO_CONTENT.primaryButtonLabel}</Button>
+          <Button size="lg" variant="secondary" className="w-full sm:w-auto" onClick={() => scrollToSection(SECTION_LINKS.about)}>{HERO_CONTENT.secondaryButtonLabel}</Button>
         </motion.div>
       </div>
       <motion.div
