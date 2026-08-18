@@ -19,8 +19,8 @@ export function Header() {
     <header className="pointer-events-none fixed inset-x-0 top-[calc(env(safe-area-inset-top)+0.75rem)] z-40 px-3 sm:px-4">
       <div
         className={clsx(
-          "pointer-events-auto mx-auto flex max-w-5xl items-center justify-between rounded-full border px-3 py-2 shadow-[0_14px_36px_rgba(0,0,0,0.22)] backdrop-blur-xl transition-all duration-500 sm:px-5 sm:py-3",
-          isScrolled ? "border-white/15 bg-[var(--color-navy)]/72" : "border-white/10 bg-[var(--color-navy)]/42"
+          "pointer-events-auto mx-auto flex max-w-5xl items-center justify-between rounded-full border px-3 py-2 shadow-[0_14px_36px_rgba(0,0,0,0.16)] backdrop-blur-2xl backdrop-saturate-150 transition-all duration-500 sm:px-5 sm:py-3",
+          isScrolled ? "border-white/14 bg-[var(--color-navy)]/45" : "border-white/8 bg-[var(--color-navy)]/14"
         )}
       >
         <a href={SECTION_LINKS.hero} className="inline-flex min-h-11 items-center font-script text-2xl text-[var(--color-silver)]">
@@ -41,7 +41,7 @@ export function Header() {
         </button>
       </div>
       {isMenuOpen && (
-        <nav className="pointer-events-auto mx-auto mt-3 flex max-w-sm flex-col gap-1 rounded-[1.5rem] border border-white/10 bg-[var(--color-navy)]/92 p-3 shadow-[0_18px_45px_rgba(0,0,0,0.28)] backdrop-blur-xl lg:hidden" aria-label={NAVIGATION_CONTENT.mobileAriaLabel}>
+        <nav className="pointer-events-auto mx-auto mt-3 flex max-w-sm flex-col gap-1 rounded-[1.5rem] border border-white/10 bg-[var(--color-navy)]/58 p-3 shadow-[0_18px_45px_rgba(0,0,0,0.22)] backdrop-blur-2xl backdrop-saturate-150 lg:hidden" aria-label={NAVIGATION_CONTENT.mobileAriaLabel}>
           {NAV_ITEMS.map((item) => (
             <a key={item.href} href={item.href} onClick={() => setIsMenuOpen(false)} className="flex min-h-11 items-center rounded-lg px-3 text-white/90 hover:bg-white/5">{item.label}</a>
           ))}

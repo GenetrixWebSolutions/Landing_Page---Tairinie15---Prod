@@ -33,6 +33,30 @@ body {
   overflow-x: clip;
 }
 
+.invitation-flow {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.invitation-flow::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 75% 9% at 12% 18%, rgba(43, 75, 176, 0.16), transparent 72%),
+    radial-gradient(ellipse 68% 10% at 88% 38%, rgba(199, 208, 224, 0.09), transparent 74%),
+    radial-gradient(ellipse 80% 12% at 18% 59%, rgba(43, 75, 176, 0.13), transparent 76%),
+    radial-gradient(ellipse 70% 9% at 82% 79%, rgba(201, 162, 75, 0.055), transparent 74%),
+    linear-gradient(180deg, rgba(10, 18, 48, 0.04), rgba(43, 75, 176, 0.055) 48%, rgba(10, 18, 48, 0.08));
+}
+
+.invitation-flow > section {
+  position: relative;
+}
+
 main > section {
   scroll-margin-top: calc(env(safe-area-inset-top) + 6rem);
 }
