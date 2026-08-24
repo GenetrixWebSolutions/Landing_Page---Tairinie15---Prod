@@ -9,6 +9,11 @@ export const HERO_IMAGES = [
     alt: "Foto Principal 2 de Tairine",
     objectPosition: "50% 42%",
   },
+  {
+    src: "/images/gallery/tairine-15.jpeg",
+    alt: "Foto Principal 3 de Tairine",
+    objectPosition: "50% 42%",
+  },
 ] as const;
 
 export const GALLERY_IMAGES = [
@@ -19,6 +24,13 @@ export const GALLERY_IMAGES = [
   { src: "/images/gallery/tairine-05.jpg", alt: "Fotografia de Tairine 05", objectPosition: "50% 42%" },
   { src: "/images/gallery/tairine-06.jpg", alt: "Fotografia de Tairine 06", objectPosition: "50% 50%" },
   { src: "/images/gallery/tairine-07.jpg", alt: "Fotografia de Tairine 07", objectPosition: "50% 50%" },
+  { src: "/images/gallery/tairine-08.jpeg", alt: "Fotografia de Tairine 08", objectPosition: "50% 50%" },
+  { src: "/images/gallery/tairine-09.jpeg", alt: "Fotografia de Tairine 09", objectPosition: "50% 50%" },
+  { src: "/images/gallery/tairine-10.jpeg", alt: "Fotografia de Tairine 10", objectPosition: "50% 50%" },
+  { src: "/images/gallery/tairine-11.jpeg", alt: "Fotografia de Tairine 11", objectPosition: "50% 50%" },
+  { src: "/images/gallery/tairine-12.jpeg", alt: "Fotografia de Tairine 12", objectPosition: "50% 50%" },
+  { src: "/images/gallery/tairine-13.jpeg", alt: "Fotografia de Tairine 13", objectPosition: "50% 50%" },
+  { src: "/images/gallery/tairine-14.jpeg", alt: "Fotografia de Tairine 14", objectPosition: "50% 50%" },
 ] as const;
 
 export const MEDIA_CONTENT = {
